@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm3ijcagctgjt"]
+
+[ext_resource type="Script" path="res://Monster/monster.gd" id="1_g75fd"]
+[ext_resource type="Script" path="res://Monster/state_machine.gd" id="2_54ug0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hjnfx"]
+radius = 7.20839
+
+[node name="Monster" type="Node3D"]
+script = ExtResource("1_g75fd")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+radius = 2.56513
+rings = 12
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.942, 2.58934)
+
+[node name="StateMachine" type="Node3D" parent="."]
+script = ExtResource("2_54ug0")
+
+[node name="Area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53255, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21758, 0, 0)
+shape = SubResource("SphereShape3D_hjnfx")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265453, 13.9422)
+current = true
+fov = 90.0

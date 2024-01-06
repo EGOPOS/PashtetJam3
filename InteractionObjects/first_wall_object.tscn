@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://6nwulayvk8po"]
+
+[ext_resource type="Script" path="res://InteractionObjects/wall_object.gd" id="1_7ny4j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e5tsc"]
+size = Vector3(3, 10, 3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tqf44"]
+points = PackedVector3Array(-1.5, -5, -1.5, -1.5, -5, 1.5, -1.5, 5, -1.5, 1.5, -5, -1.5, 1.5, -5, 1.5, -1.5, 5, 1.5, 1.5, 5, -1.5, 1.5, 5, 1.5)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+script = ExtResource("1_7ny4j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_e5tsc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_tqf44")
