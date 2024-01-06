@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctnsepxkqrryb"]
+
+[ext_resource type="PackedScene" uid="uid://bpfn4e0lt6wne" path="res://game/items/item.tscn" id="1_h0mil"]
+[ext_resource type="PackedScene" uid="uid://6lg65sanw7k5" path="res://game/actions/action_area.tscn" id="2_5h6iu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwwad"]
+albedo_color = Color(0.533333, 0.27451, 0.0352941, 1)
+
+[node name="Food" instance=ExtResource("1_h0mil")]
+collision_layer = 4
+collision_mask = 5
+axis_lock_linear_z = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+can_sleep = false
+
+[node name="ActionArea" parent="." index="0" node_paths=PackedStringArray("object") instance=ExtResource("2_5h6iu")]
+monitoring = false
+action_object_is_player = true
+action_function = "grab_item"
+object_is_argument = true
+object = NodePath("..")
+action_details = "поднять"
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." index="2"]
+radius = 0.25
+material = SubResource("StandardMaterial3D_xwwad")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8b3vwu64xejo"]
+
+[ext_resource type="PackedScene" uid="uid://com37t1edvtlk" path="res://game/player/player.tscn" id="1_sog5c"]
+[ext_resource type="PackedScene" uid="uid://ctnsepxkqrryb" path="res://game/items/food.tscn" id="2_tapwt"]
+
+[node name="Test" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0923767, -0.514939, 0)
+size = Vector3(37.6558, 1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26628, 0.565372, 0.0854931)
+size = Vector3(5.47456, 3.18262, 3.51523)
+
+[node name="Player" parent="." instance=ExtResource("1_sog5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33661, 2.56397, -0.0106727)
+movement_speed = 12.0
+jump_power = 10.0
+acceleration = 8.0
+friction = 6.0
+gravity = 20.0
+
+[node name="Food" parent="." instance=ExtResource("2_tapwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.59944, 0.382948, 0.0284605)
+gravity_scale = 3.0
+
+[node name="Food2" parent="." instance=ExtResource("2_tapwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.43227, 0.382948, -0.0295963)
+gravity_scale = 3.0

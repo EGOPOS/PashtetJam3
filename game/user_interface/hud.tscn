@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://diatftohhyn4i"]
+
+[ext_resource type="Script" path="res://game/user_interface/hud.gd" id="1_635xu"]
+[ext_resource type="Texture2D" uid="uid://b4cmfmsgykh3t" path="res://assets/T_Enemy_SmallBot.png" id="2_8fu81"]
+[ext_resource type="Texture2D" uid="uid://chmlboo8iudre" path="res://assets/5a6c75a0e0a1116137ab7c98.png" id="3_8qvnc"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_635xu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 180.0
+offset_bottom = 104.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/v_separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HFlowContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_8fu81")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HFlowContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "20/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HFlowContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_8qvnc")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HFlowContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1

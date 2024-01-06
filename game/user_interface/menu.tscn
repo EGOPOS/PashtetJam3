@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2tygocpo4o5a"]
+
+[ext_resource type="Script" path="res://game/user_interface/menu.gd" id="1_ghhqs"]
+[ext_resource type="PackedScene" uid="uid://lbeaqgyi1yq0" path="res://game/settings.tscn" id="1_we6r3"]
+[ext_resource type="Texture2D" uid="uid://djrqq7cv10w31" path="res://assets/easy-environment-3d-model-ma-mb.jpg" id="2_6w5d7"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yylvt"]
+viewport_path = NodePath("TextureRect/SubViewport")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ghhqs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_yylvt")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SubViewport" type="SubViewport" parent="TextureRect"]
+size = Vector2i(1024, 1024)
+
+[node name="Camera2D" type="Camera2D" parent="TextureRect/SubViewport"]
+anchor_mode = 0
+
+[node name="Easy-environment-3d-model-ma-mb" type="Sprite2D" parent="TextureRect/SubViewport"]
+position = Vector2(0, 300)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_6w5d7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -56.5
+offset_right = 145.0
+offset_bottom = 56.5
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+focus_mode = 0
+text = "Играть"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+focus_mode = 0
+text = "Настройки"
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+focus_mode = 0
+text = "Выход"
+
+[node name="settings" parent="." instance=ExtResource("1_we6r3")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

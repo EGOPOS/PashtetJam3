@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://6lg65sanw7k5"]
+
+[ext_resource type="Script" path="res://game/actions/action_area.gd" id="1_c3a8q"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8g578"]
+height = 0.5
+
+[node name="ActionArea" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_c3a8q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_8g578")

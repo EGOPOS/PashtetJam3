@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpfn4e0lt6wne"]
+
+[ext_resource type="Script" path="res://game/items/item.gd" id="1_cefw7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l3vra"]
+radius = 0.25
+
+[node name="Item" type="RigidBody3D"]
+script = ExtResource("1_cefw7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_l3vra")
