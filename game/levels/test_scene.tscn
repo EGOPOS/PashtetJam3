@@ -1,0 +1,102 @@
+[gd_scene load_steps=13 format=3 uid="uid://5qykuv2t0djj"]
+
+[ext_resource type="PackedScene" uid="uid://dm3ijcagctgjt" path="res://game/Monster/monster.tscn" id="1_cn0q6"]
+[ext_resource type="Texture2D" uid="uid://cjpotn6l4sg78" path="res://assets/parallax-mountain-bg.png" id="2_yfax8"]
+[ext_resource type="PackedScene" uid="uid://bb4wkmjrdtnea" path="res://game/levels/parallax/parallax.tscn" id="3_fvjft"]
+[ext_resource type="Texture2D" uid="uid://bdunaena7c5a8" path="res://assets/parallax-mountain-foreground-trees.png" id="3_pu8uh"]
+[ext_resource type="Texture2D" uid="uid://cex2j4ql4vth1" path="res://assets/parallax-mountain-mountains.png" id="4_gwwg7"]
+[ext_resource type="Texture2D" uid="uid://bifmii42qip81" path="res://assets/parallax-mountain-montain-far.png" id="6_rx3kg"]
+[ext_resource type="Texture2D" uid="uid://dgs7qs00vbxfj" path="res://assets/parallax-mountain-trees.png" id="7_4vj2u"]
+[ext_resource type="PackedScene" uid="uid://6nwulayvk8po" path="res://game/InteractionObjects/first_wall_object.tscn" id="8_ibwso"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_piwew"]
+load_path = "res://.godot/imported/parallax-mountain-foreground-trees.png-2b4b73cd57a8e53c4b0a895a3577aba8.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcnkm"]
+albedo_color = Color(0.12549, 0.0823529, 0.054902, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uy61n"]
+material = SubResource("StandardMaterial3D_bcnkm")
+size = Vector3(275, 20, 40)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_slpln"]
+data = PackedVector3Array(-137.5, 10, 20, 137.5, 10, 20, -137.5, -10, 20, 137.5, 10, 20, 137.5, -10, 20, -137.5, -10, 20, 137.5, 10, -20, -137.5, 10, -20, 137.5, -10, -20, -137.5, 10, -20, -137.5, -10, -20, 137.5, -10, -20, 137.5, 10, 20, 137.5, 10, -20, 137.5, -10, 20, 137.5, 10, -20, 137.5, -10, -20, 137.5, -10, 20, -137.5, 10, -20, -137.5, 10, 20, -137.5, -10, -20, -137.5, 10, 20, -137.5, -10, 20, -137.5, -10, -20, 137.5, 10, 20, -137.5, 10, 20, 137.5, 10, -20, -137.5, 10, 20, -137.5, 10, -20, 137.5, 10, -20, -137.5, -10, 20, 137.5, -10, 20, -137.5, -10, -20, 137.5, -10, 20, 137.5, -10, -20, -137.5, -10, -20)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Parallax3" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("3_fvjft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26077, 4.23781)
+sprite = NodePath("Sprite3D2")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Parallax3"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 90.0589, 30.8547, -43.6166)
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("6_rx3kg")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Parallax3/Sprite3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47336, 0, 0)
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("6_rx3kg")
+
+[node name="Parallax" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("3_fvjft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.6765, 0, -37.6811)
+sprite = NodePath("Sprite3D2")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Parallax"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 0, 24.1372, 8.19199)
+texture_filter = 0
+render_priority = 2
+texture = ExtResource("4_gwwg7")
+
+[node name="Parallax4" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("3_fvjft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34.48, -24.4541)
+sprite = NodePath("Sprite3D2")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Parallax4"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 63.0323, 0, 0)
+texture_filter = 0
+render_priority = 3
+texture = ExtResource("7_4vj2u")
+
+[node name="Parallax2" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("3_fvjft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.9648, 5.76369, -1.74634)
+sprite = NodePath("Sprite3D")
+
+[node name="Sprite3D" type="Sprite3D" parent="Parallax2"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 0, 24.8302, -17.7149)
+texture_filter = 0
+render_priority = 4
+texture = ExtResource("3_pu8uh")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Parallax2/Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, -1.5299e-06, -0.02, 0, 35, -8.74228e-10, 0, -0.665966, 29.2006)
+modulate = Color(0.054902, 0.054902, 0.054902, 0.505882)
+texture_filter = 0
+render_priority = 4
+texture = SubResource("CompressedTexture2D_piwew")
+
+[node name="Monster" parent="." instance=ExtResource("1_cn0q6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.526223, -9.70439)
+
+[node name="Sprite3D" type="Sprite3D" parent="Monster"]
+transform = Transform3D(100, 0, 0, 0, 90, 0, 0, 0, 1, 0, 14.9355, -37.836)
+transparent = false
+texture_filter = 0
+texture = ExtResource("2_yfax8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.6113, -13.0733, 1.62777)
+mesh = SubResource("BoxMesh_uy61n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_slpln")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 15, -10)
+
+[node name="RigidBody3D" parent="." instance=ExtResource("8_ibwso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 8.84612, -9.79512)
