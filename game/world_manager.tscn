@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2tw8ogeic2mv"]
+
+[ext_resource type="Script" path="res://world_manager.gd" id="1_n5cfc"]
+
+[node name="WorldManager" type="Node3D"]
+script = ExtResource("1_n5cfc")
+
+[node name="Timer" type="Timer" parent="."]

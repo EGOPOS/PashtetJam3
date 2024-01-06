@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bb4wkmjrdtnea"]
 
-[ext_resource type="Script" path="res://parallax.gd" id="1_agam3"]
+[ext_resource type="Script" path="res://game/levels/parallax/parallax.gd" id="1_agam3"]
 
 [node name="Parallax" type="Node3D"]
 script = ExtResource("1_agam3")

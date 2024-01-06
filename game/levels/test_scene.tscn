@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5qykuv2t0djj"]
+[gd_scene load_steps=15 format=3 uid="uid://5qykuv2t0djj"]
 
 [ext_resource type="PackedScene" uid="uid://dm3ijcagctgjt" path="res://game/Monster/monster.tscn" id="1_cn0q6"]
 [ext_resource type="Texture2D" uid="uid://cjpotn6l4sg78" path="res://assets/parallax-mountain-bg.png" id="2_yfax8"]
@@ -12,6 +12,9 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_piwew"]
 load_path = "res://.godot/imported/parallax-mountain-foreground-trees.png-2b4b73cd57a8e53c4b0a895a3577aba8.s3tc.ctex"
 
+[sub_resource type="FogMaterial" id="FogMaterial_5hx8r"]
+density = -8.0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcnkm"]
 albedo_color = Color(0.12549, 0.0823529, 0.054902, 1)
 
@@ -21,6 +24,9 @@ size = Vector3(275, 20, 40)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_slpln"]
 data = PackedVector3Array(-137.5, 10, 20, 137.5, 10, 20, -137.5, -10, 20, 137.5, 10, 20, 137.5, -10, 20, -137.5, -10, 20, 137.5, 10, -20, -137.5, 10, -20, 137.5, -10, -20, -137.5, 10, -20, -137.5, -10, -20, 137.5, -10, -20, 137.5, 10, 20, 137.5, 10, -20, 137.5, -10, 20, 137.5, 10, -20, 137.5, -10, -20, 137.5, -10, 20, -137.5, 10, -20, -137.5, 10, 20, -137.5, -10, -20, -137.5, 10, 20, -137.5, -10, 20, -137.5, -10, -20, 137.5, 10, 20, -137.5, 10, 20, 137.5, 10, -20, -137.5, 10, 20, -137.5, 10, -20, 137.5, 10, -20, -137.5, -10, 20, 137.5, -10, 20, -137.5, -10, -20, 137.5, -10, 20, 137.5, -10, -20, -137.5, -10, -20)
+
+[sub_resource type="Environment" id="Environment_0xro5"]
+volumetric_fog_density = 0.0
 
 [node name="Node3D" type="Node3D"]
 
@@ -86,6 +92,12 @@ transparent = false
 texture_filter = 0
 texture = ExtResource("2_yfax8")
 
+[node name="FogVolume2" type="FogVolume" parent="Monster"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.26531, 0)
+size = Vector3(30, 24.73, 100)
+shape = 2
+material = SubResource("FogMaterial_5hx8r")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.6113, -13.0733, 1.62777)
 mesh = SubResource("BoxMesh_uy61n")
@@ -100,3 +112,6 @@ transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 15, -
 
 [node name="RigidBody3D" parent="." instance=ExtResource("8_ibwso")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 8.84612, -9.79512)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0xro5")
