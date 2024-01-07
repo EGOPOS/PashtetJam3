@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b555fslkefsln"
-path.s3tc="res://.godot/imported/HotelAnim_Hotel_Decor1_Normal.png-e1590e571c1d9ceab8a4e9a0c13df963.s3tc.ctex"
+uid="uid://blg126321nicn"
+path.s3tc="res://.godot/imported/Hotel_Hotel_Decor1_Metallic-Hotel_Decor1_Roughness.png-89358f811b81435d4ff5e6857981cdba.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Monster/HotelAnim_Hotel_Decor1_Normal.png"
-dest_files=["res://.godot/imported/HotelAnim_Hotel_Decor1_Normal.png-e1590e571c1d9ceab8a4e9a0c13df963.s3tc.ctex"]
+source_file="res://assets/Monster/Hotel_Hotel_Decor1_Metallic-Hotel_Decor1_Roughness.png"
+dest_files=["res://.godot/imported/Hotel_Hotel_Decor1_Metallic-Hotel_Decor1_Roughness.png-89358f811b81435d4ff5e6857981cdba.s3tc.ctex"]
 
 [params]
 
@@ -21,12 +21,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://assets/Monster/HotelAnim_Hotel_Decor1_Normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

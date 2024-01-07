@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Hud="*res://game/user_interface/hud.tscn"
-Enviroment="*res://game/InteractionObjects/world_manager.tscn"
 
 [display]
 

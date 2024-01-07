@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bey00xjsg07nc"
-path.s3tc="res://.godot/imported/HotelAnim_Hotel_Decor1_Metallic-Hotel_Decor1_Roughness.png-af180e11a990c719ac83a7110783d0e8.s3tc.ctex"
+uid="uid://bwwqok88hep61"
+path.s3tc="res://.godot/imported/Hotel_Hotel_OSN_BaseColor.png-432642d73bc13ba1b809a8ea550fc935.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Monster/HotelAnim_Hotel_Decor1_Metallic-Hotel_Decor1_Roughness.png"
-dest_files=["res://.godot/imported/HotelAnim_Hotel_Decor1_Metallic-Hotel_Decor1_Roughness.png-af180e11a990c719ac83a7110783d0e8.s3tc.ctex"]
+source_file="res://assets/Monster/Hotel_Hotel_OSN_BaseColor.png"
+dest_files=["res://.godot/imported/Hotel_Hotel_OSN_BaseColor.png-432642d73bc13ba1b809a8ea550fc935.s3tc.ctex"]
 
 [params]
 

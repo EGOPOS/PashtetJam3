@@ -6,9 +6,9 @@ extends Node3D
 
 @onready var event_timer: Timer = $Timer
 
-var monster: Monster
-var player: Player
-var world_env: WorldEnvironment
+@onready var monster: Monster = get_tree().current_scene.get_node("Monster")
+@onready var player: Player = get_tree().current_scene.get_node("Player")
+@onready var world_env: WorldEnvironment = get_tree().current_scene.get_node("WorldEnvironment")
 
 enum EVENTS{RAIN, FLOOD, FOG, DRIVER}
 
@@ -16,7 +16,7 @@ var valid_events: Array[EVENTS] = [EVENTS.RAIN, EVENTS.FLOOD, EVENTS.FOG, EVENTS
 
 var events: Dictionary = {
 	EVENTS.RAIN : "",
-	EVENTS.FLOOD : "",
+	EVENTS.FLOOD : "res://game/InteractionObjects/Events/flood.tscn",
 	EVENTS.FOG: "",
 	EVENTS.DRIVER: ""
 }

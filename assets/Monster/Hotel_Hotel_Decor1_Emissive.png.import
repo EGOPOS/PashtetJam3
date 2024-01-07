@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhawhou2oaykw"
-path.s3tc="res://.godot/imported/HotelAnim_Hotel_Decor1_Emissive.png-3c422f598dc6b4b61a036dad77ab7e5a.s3tc.ctex"
+uid="uid://yi05y78gmbp4"
+path.s3tc="res://.godot/imported/Hotel_Hotel_Decor1_Emissive.png-9559babdf12665af71a3b99ef2c85ff5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Monster/HotelAnim_Hotel_Decor1_Emissive.png"
-dest_files=["res://.godot/imported/HotelAnim_Hotel_Decor1_Emissive.png-3c422f598dc6b4b61a036dad77ab7e5a.s3tc.ctex"]
+source_file="res://assets/Monster/Hotel_Hotel_Decor1_Emissive.png"
+dest_files=["res://.godot/imported/Hotel_Hotel_Decor1_Emissive.png-9559babdf12665af71a3b99ef2c85ff5.s3tc.ctex"]
 
 [params]
 

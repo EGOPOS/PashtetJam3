@@ -1,6 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://lv8leg1wty3l"]
+[gd_scene load_steps=28 format=3 uid="uid://lv8leg1wty3l"]
 
+[ext_resource type="Script" path="res://game/levels/with_player_test_scene.gd" id="1_rr4a1"]
 [ext_resource type="PackedScene" uid="uid://com37t1edvtlk" path="res://game/player/player.tscn" id="1_tluky"]
+[ext_resource type="PackedScene" uid="uid://0dmpm0xwbsln" path="res://game/world_manager.tscn" id="2_hf6un"]
 [ext_resource type="PackedScene" uid="uid://bb4wkmjrdtnea" path="res://game/levels/parallax/parallax.tscn" id="2_l81ww"]
 [ext_resource type="Texture2D" uid="uid://bifmii42qip81" path="res://assets/parallax-mountain-montain-far.png" id="3_tsesa"]
 [ext_resource type="Texture2D" uid="uid://cex2j4ql4vth1" path="res://assets/parallax-mountain-mountains.png" id="4_l1pm2"]
@@ -53,9 +55,12 @@ fog_light_energy = 0.1
 fog_sun_scatter = 0.26
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_rr4a1")
+
+[node name="WorldManager" parent="." instance=ExtResource("2_hf6un")]
 
 [node name="Player" parent="." instance=ExtResource("1_tluky")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.2217, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10.2217, 0, 0)
 
 [node name="Parallax3" parent="." instance=ExtResource("2_l81ww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26077, 4.23781)
@@ -113,6 +118,9 @@ transform = Transform3D(7.375, 0, 0, 0, 7.375, 0, 0, 0, 7.375, -92.3383, -9.6348
 
 [node name="Monster" parent="." instance=ExtResource("8_oh3gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.34081, -2.34749)
+
+[node name="Hotel" parent="Monster" index="0"]
+transform = Transform3D(-3.93403e-07, 0, 9, 0, 9, 0, -9, 0, -3.93403e-07, 0, -1.70154, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="Monster"]
 transform = Transform3D(150, 0, 0, 0, 135, 0, 0, 0, 1, 0, 14.9355, -48.8148)
@@ -256,3 +264,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.0066, 0, 0)
 
 [node name="Food6" parent="." instance=ExtResource("18_mf2ef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.9574, 0, 0)
+
+[editable path="Monster"]
+[editable path="Monster/Hotel"]
