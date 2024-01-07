@@ -5,3 +5,4 @@
 
 [node name="Event" instance=ExtResource("1_cby26")]
 script = ExtResource("2_xyfvg")
+event_time = 15.0

@@ -2,9 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bpfn4e0lt6wne" path="res://game/items/item.tscn" id="1_h0mil"]
 [ext_resource type="PackedScene" uid="uid://6lg65sanw7k5" path="res://game/actions/action_area.tscn" id="2_5h6iu"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwwad"]
-albedo_color = Color(0.533333, 0.27451, 0.0352941, 1)
+[ext_resource type="Texture2D" uid="uid://ccnqdr55n75wo" path="res://assets/RawMeat.png" id="3_7dk0a"]
 
 [node name="Food" instance=ExtResource("1_h0mil")]
 collision_layer = 4
@@ -22,6 +20,8 @@ object_is_argument = true
 object = NodePath("..")
 action_details = "поднять"
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="." index="2"]
-radius = 0.25
-material = SubResource("StandardMaterial3D_xwwad")
+[node name="Sprite3D" type="Sprite3D" parent="." index="2"]
+pixel_size = 0.05
+texture_filter = 0
+render_priority = 127
+texture = ExtResource("3_7dk0a")

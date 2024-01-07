@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://diatftohhyn4i"]
+
+[ext_resource type="Script" path="res://game/user_interface/hud.gd" id="1_635xu"]
+[ext_resource type="Texture2D" uid="uid://b4cmfmsgykh3t" path="res://assets/T_Enemy_SmallBot.png" id="2_8fu81"]
+[ext_resource type="Texture2D" uid="uid://ccnqdr55n75wo" path="res://assets/RawMeat.png" id="3_t85xs"]
+[ext_resource type="PackedScene" uid="uid://lbeaqgyi1yq0" path="res://game/settings.tscn" id="4_nvtjh"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_635xu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 180.0
+offset_bottom = 104.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/v_separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HFlowContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_8fu81")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HFlowContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "20/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HFlowContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_t85xs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HFlowContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Control" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.564706)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+offset_left = 25.0
+offset_top = 267.5
+offset_right = 205.0
+offset_bottom = 380.5
+
+[node name="Button" type="Button" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+focus_mode = 0
+text = "Вернуться"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+focus_mode = 0
+text = "Настройки"
+
+[node name="Button3" type="Button" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+focus_mode = 0
+text = "Выход"
+
+[node name="settings" parent="Control" instance=ExtResource("4_nvtjh")]
+visible = false
+layout_mode = 1

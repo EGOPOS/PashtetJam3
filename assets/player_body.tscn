@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://5d5lpjkuwtaf"]
+
+[ext_resource type="PackedScene" uid="uid://dd5f885jv6ro6" path="res://assets/player/HotelPlayer.glb" id="1_23xvg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_05jyr"]
+height = 0.163759
+radius = 0.498047
+
+[node name="PlayerBody" type="RigidBody3D"]
+can_sleep = false
+
+[node name="HotelPlayer" parent="." instance=ExtResource("1_23xvg")]
+transform = Transform3D(-2.09815e-08, 0.48, -2.09815e-08, 0, -2.09815e-08, -0.48, -0.48, -2.09815e-08, 9.17129e-16, 0, 0, 0)
+
+[node name="Skeleton3D" parent="HotelPlayer/Armature" index="0"]
+bones/0/position = Vector3(0, 1.47723, 0)
+bones/0/rotation = Quaternion(0, -0.287132, 0, 0.957891)
+bones/3/rotation = Quaternion(-2.17329e-07, -9.55027e-08, -0.600344, 0.799742)
+bones/7/rotation = Quaternion(0.545807, 0.765215, 0.246149, 0.23654)
+bones/8/rotation = Quaternion(0.30585, -0.0585178, 0.081767, 0.946755)
+bones/9/position = Vector3(-2.79397e-09, 1.48234, 1.00147e-09)
+bones/9/rotation = Quaternion(0.630658, 0.319798, 0.630658, -0.319798)
+bones/10/rotation = Quaternion(-0.406195, 1.26801e-07, -5.08207e-09, 0.913786)
+bones/11/position = Vector3(-6.56582e-08, 1.48234, 1.67183e-09)
+bones/11/rotation = Quaternion(-0.628228, 0.324545, 0.628228, 0.324545)
+bones/12/rotation = Quaternion(-0.409924, 8.24429e-09, -4.30109e-08, 0.91212)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_05jyr")
+
+[editable path="HotelPlayer"]

@@ -84,3 +84,15 @@ func _input(event):
 				return
 		if current_item:
 			throw_item()
+
+func die():
+	const PLAYER_BODY = preload("res://assets/player_body.tscn")
+	var body_instance = PLAYER_BODY.instantiate()
+	get_tree().current_scene.add_child(body_instance)
+	body_instance.global_position = global_position - Vector3(0, 0.5, 0)
+	
+	current_item = null
+	
+	var monster = get_tree().current_scene.get_node("Monster")
+	global_position = monster.player_spawn_marker.global_position
+	monster.player_lives -= 1

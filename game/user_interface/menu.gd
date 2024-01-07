@@ -6,7 +6,7 @@ extends Control
 @onready var settings = $settings
 
 func _ready():
-	play_button.pressed.connect(func(): get_tree().change_scene_to_file("res://game/levels/test_scene.tscn"))
+	play_button.pressed.connect(func(): get_tree().change_scene_to_file("res://game/levels/with_player_test_scene.tscn"))
 	settings_button.pressed.connect(func(): settings.visible = !settings.visible)
 	exit_button.pressed.connect(get_tree().quit)
 
