@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://lv8leg1wty3l"]
+[gd_scene load_steps=29 format=3 uid="uid://lv8leg1wty3l"]
 
 [ext_resource type="Script" path="res://game/levels/with_player_test_scene.gd" id="1_rr4a1"]
 [ext_resource type="PackedScene" uid="uid://com37t1edvtlk" path="res://game/player/player.tscn" id="1_tluky"]
@@ -20,9 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://cep46720lf3uu" path="res://assets/Enviroment/Rock7.glb" id="16_gi6mf"]
 [ext_resource type="PackedScene" uid="uid://6nwulayvk8po" path="res://game/InteractionObjects/first_wall_object.tscn" id="17_ctxku"]
 [ext_resource type="PackedScene" uid="uid://ctnsepxkqrryb" path="res://game/items/food.tscn" id="18_mf2ef"]
+[ext_resource type="PackedScene" uid="uid://b26jv6k4qsc3f" path="res://game/Vfx/RainBlya.tscn" id="21_ch0b4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_piwew"]
-load_path = "res://.godot/imported/parallax-mountain-foreground-trees.png-2b4b73cd57a8e53c4b0a895a3577aba8.s3tc.ctex"
 
 [sub_resource type="FogMaterial" id="FogMaterial_5hx8r"]
 density = -8.0
@@ -62,6 +62,10 @@ script = ExtResource("1_rr4a1")
 [node name="Player" parent="." instance=ExtResource("1_tluky")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10.2217, 0, 0)
 
+[node name="Node3D" parent="Player" instance=ExtResource("21_ch0b4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.6, -5.11085, 0, 1.67381)
+top_level = false
+
 [node name="Parallax3" parent="." instance=ExtResource("2_l81ww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26077, 4.23781)
 speed_multiplier = 0.1
@@ -100,8 +104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.9648, 5.76369, -1.74634)
 speed_multiplier = 1.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Parallax2"]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 0, 24.8302, -17.7149)
-visible = false
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, -0.000198364, 24.8823, -17.7213)
 texture_filter = 0
 render_priority = 4
 texture = ExtResource("6_cj273")
@@ -119,7 +122,7 @@ transform = Transform3D(7.375, 0, 0, 0, 7.375, 0, 0, 0, 7.375, -92.3383, -9.6348
 [node name="Monster" parent="." instance=ExtResource("8_oh3gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.34081, -2.34749)
 
-[node name="Hotel" parent="Monster" index="0"]
+[node name="Hotel" parent="Monster" index="1"]
 transform = Transform3D(-3.93403e-07, 0, 9, 0, 9, 0, -9, 0, -3.93403e-07, 0, -1.70154, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="Monster"]
@@ -145,7 +148,7 @@ mesh = SubResource("BoxMesh_uy61n")
 shape = SubResource("ConcavePolygonShape3D_slpln")
 
 [node name="Rocks" type="Node3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6113, 13.0733, -1.62777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.624, 13.0733, -1.60429)
 
 [node name="Rock1" parent="MeshInstance3D/Rocks" instance=ExtResource("10_ttj8h")]
 transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 38.9769, -3.24697, -11.5731)
