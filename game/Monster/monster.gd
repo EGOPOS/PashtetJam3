@@ -16,6 +16,7 @@ var player_to_hungry: float = max_hungry_level / max_player_lives
 @onready var state_machine: MonsterStateMachine = $StateMachine
 @onready var wall_area: Area3D = $Area
 @onready var famine_timer: Timer = $FamineTimer
+@onready var down_area: Area3D = $DownArea
 
 var velocity: Vector3
 var hungry_level: float:
@@ -30,7 +31,7 @@ func _ready():
 	hungry_level = max_hungry_level
 	famine_timer.timeout.connect(make_famine)
 	famine_timer.start(famine_tic)
-	get_tree().current_scene.get_node("WorldManager").monster = self
+	#get_tree().current_scene.get_node("WorldManager").monster = self
 
 	wall_area.body_entered.connect(stop_moving)
 	wall_area.body_exited.connect(continue_moving)

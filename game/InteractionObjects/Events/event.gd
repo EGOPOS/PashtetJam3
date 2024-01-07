@@ -24,4 +24,4 @@ func _on_event_tic() -> void:
 	pass
 
 func _exit_event() -> void:
-	pass
+	queue_free()

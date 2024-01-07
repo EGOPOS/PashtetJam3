@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://cne4o062jjfcm"]
+
+[ext_resource type="PackedScene" uid="uid://dx0mgdv5okv8s" path="res://game/InteractionObjects/Events/event.tscn" id="1_5gp33"]
+[ext_resource type="Script" path="res://game/InteractionObjects/Events/driver.gd" id="2_d6a62"]
+[ext_resource type="PackedScene" uid="uid://bw5p7bbiming0" path="res://game/References/driver_gosling.tscn" id="3_hi7ev"]
+
+[node name="Driver" instance=ExtResource("1_5gp33")]
+script = ExtResource("2_d6a62")
+driver = ExtResource("3_hi7ev")
+event_time = 12.0
