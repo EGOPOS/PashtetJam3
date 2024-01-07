@@ -1,7 +1,6 @@
 class_name Monster
 extends Node3D
 
-@export var max_speed: float
 @export var max_hungry_level: float
 @export var famine: float
 

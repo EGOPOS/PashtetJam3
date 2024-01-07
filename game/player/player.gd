@@ -34,7 +34,6 @@ func _process(delta):
 	
 	if current_item:
 		current_item.global_position = lerp(current_item.global_position, item_marker.global_position, delta * 30)
-		
 
 func grab_item(item: Item):
 	if current_item:
