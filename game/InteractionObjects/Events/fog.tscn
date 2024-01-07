@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw1qcdadyuugp"]
+
+[ext_resource type="PackedScene" uid="uid://dx0mgdv5okv8s" path="res://game/InteractionObjects/Events/event.tscn" id="1_hryj5"]
+[ext_resource type="Script" path="res://game/InteractionObjects/Events/fog.gd" id="2_q1gsh"]
+
+[node name="Fog" instance=ExtResource("1_hryj5")]
+script = ExtResource("2_q1gsh")
+event_time = 10.0
