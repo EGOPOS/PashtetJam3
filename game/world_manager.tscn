@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2tw8ogeic2mv"]
+[gd_scene load_steps=2 format=3 uid="uid://0dmpm0xwbsln"]
 
-[ext_resource type="Script" path="res://world_manager.gd" id="1_n5cfc"]
+[ext_resource type="Script" path="res://game/world_manager.gd" id="1_n5cfc"]
 
 [node name="WorldManager" type="Node3D"]
 script = ExtResource("1_n5cfc")
