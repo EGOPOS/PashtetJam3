@@ -4,13 +4,27 @@ extends Node3D
 @export var max_hungry_level: float
 @export var famine: float
 
+@export var max_player_lives: int = 20
+var player_lives: int:
+	set(value):
+		player_lives = value
+		Hud.set_player_lives(player_lives)
+		
+var player_to_hungry: float = max_hungry_level / max_player_lives
+
 @onready var state_machine: MonsterStateMachine = $StateMachine
 @onready var wall_area: Area3D = $Area
 
 var velocity: Vector3
-var hungry_level: float
+var hungry_level: float:
+	set(value):
+		hungry_level = value
+		Hud.set_monster_hungry(hungry_level)
 
 func _ready():
+	player_lives = 15
+	Hud.max_player_lives = max_player_lives
+	
 	wall_area.body_entered.connect(stop_moving)
 	wall_area.body_exited.connect(continue_moving)
 	state_machine.change_state("Moving")
@@ -25,3 +39,6 @@ func continue_moving(body) -> void:
 
 func _process(delta):
 	pass
+
+func eat_player_lives():
+	player_lives = clamp(player_lives, 0, max_player_lives)

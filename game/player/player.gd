@@ -4,12 +4,12 @@ class_name Player
 
 @export var movement_speed: float = 15
 @export var air_speed_multiplier: float = 0.7
-@export var jump_power: float = 25
+@export var jump_power: float = 10
 
-@export var acceleration: float = 6
-@export var friction: float = 12
+@export var acceleration: float = 8
+@export var friction: float = 6
 
-@export var gravity = 1.0
+@export var gravity = 20
 
 @onready var item_marker = $Marker3D/Marker3D2
 @onready var animation_player = $model/AnimationPlayer
@@ -21,6 +21,8 @@ var animation = "Pidle"
 var current_item: Item = null
 
 func _process(delta):
+	velocity.z = 0
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -65,10 +67,10 @@ func grab_item(item: Item):
 	current_item.freeze = true
 
 func throw_item():
-	if not current_item:
-		return
 	animation_player.play("DropItem")
 	await animation_player.animation_finished
+	if not current_item:
+		return
 	current_item.freeze = false
 	current_item.reparent(get_tree().current_scene)
 	current_item.apply_central_impulse(Vector3(velocity.normalized().x, 1, 0) * 10.0)

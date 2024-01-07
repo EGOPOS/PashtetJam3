@@ -15,6 +15,10 @@ run/main_scene="res://game/user_interface/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Hud="*res://game/user_interface/hud.tscn"
+
 [display]
 
 window/stretch/mode="canvas_items"

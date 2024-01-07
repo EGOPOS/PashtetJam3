@@ -19,10 +19,6 @@ size = Vector3(5.47456, 3.18262, 3.51523)
 [node name="Player" parent="." instance=ExtResource("1_sog5c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33661, 2.56397, -0.0106727)
 movement_speed = 12.0
-jump_power = 10.0
-acceleration = 8.0
-friction = 6.0
-gravity = 20.0
 
 [node name="Food" parent="." instance=ExtResource("2_tapwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.59944, 0.382948, 0.0284605)

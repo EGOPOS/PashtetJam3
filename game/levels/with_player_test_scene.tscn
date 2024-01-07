@@ -1,0 +1,258 @@
+[gd_scene load_steps=26 format=3 uid="uid://lv8leg1wty3l"]
+
+[ext_resource type="PackedScene" uid="uid://com37t1edvtlk" path="res://game/player/player.tscn" id="1_tluky"]
+[ext_resource type="PackedScene" uid="uid://bb4wkmjrdtnea" path="res://game/levels/parallax/parallax.tscn" id="2_l81ww"]
+[ext_resource type="Texture2D" uid="uid://bifmii42qip81" path="res://assets/parallax-mountain-montain-far.png" id="3_tsesa"]
+[ext_resource type="Texture2D" uid="uid://cex2j4ql4vth1" path="res://assets/parallax-mountain-mountains.png" id="4_l1pm2"]
+[ext_resource type="Texture2D" uid="uid://dgs7qs00vbxfj" path="res://assets/parallax-mountain-trees.png" id="5_3fw2w"]
+[ext_resource type="Texture2D" uid="uid://bdunaena7c5a8" path="res://assets/parallax-mountain-foreground-trees.png" id="6_cj273"]
+[ext_resource type="PackedScene" uid="uid://j3storw1j4td" path="res://assets/Enviroment/trees.tscn" id="7_oom67"]
+[ext_resource type="PackedScene" uid="uid://dm3ijcagctgjt" path="res://game/Monster/monster.tscn" id="8_oh3gb"]
+[ext_resource type="Texture2D" uid="uid://cjpotn6l4sg78" path="res://assets/parallax-mountain-bg.png" id="9_vv64o"]
+[ext_resource type="PackedScene" uid="uid://c0ijo2sixg6xw" path="res://assets/Enviroment/Rock1.glb" id="10_ttj8h"]
+[ext_resource type="PackedScene" uid="uid://bwmadjj1t03yq" path="res://assets/Enviroment/Rock2.glb" id="11_84l0f"]
+[ext_resource type="PackedScene" uid="uid://c3t2iacbjc5yg" path="res://assets/Enviroment/Rock3.glb" id="12_ohkv8"]
+[ext_resource type="PackedScene" uid="uid://dik57ul7wtkd" path="res://assets/Enviroment/Rock4.glb" id="13_ngsgp"]
+[ext_resource type="PackedScene" uid="uid://xo7liwpsc772" path="res://assets/Enviroment/Rock5.glb" id="14_58qq3"]
+[ext_resource type="PackedScene" uid="uid://tfljtopccc08" path="res://assets/Enviroment/Rock6.glb" id="15_ccel3"]
+[ext_resource type="PackedScene" uid="uid://cep46720lf3uu" path="res://assets/Enviroment/Rock7.glb" id="16_gi6mf"]
+[ext_resource type="PackedScene" uid="uid://6nwulayvk8po" path="res://game/InteractionObjects/first_wall_object.tscn" id="17_ctxku"]
+[ext_resource type="PackedScene" uid="uid://ctnsepxkqrryb" path="res://game/items/food.tscn" id="18_mf2ef"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_piwew"]
+load_path = "res://.godot/imported/parallax-mountain-foreground-trees.png-2b4b73cd57a8e53c4b0a895a3577aba8.s3tc.ctex"
+
+[sub_resource type="FogMaterial" id="FogMaterial_5hx8r"]
+density = -8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcnkm"]
+albedo_color = Color(0.12549, 0.0823529, 0.054902, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uy61n"]
+material = SubResource("StandardMaterial3D_bcnkm")
+size = Vector3(275, 20, 40)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_slpln"]
+data = PackedVector3Array(-137.5, 10, 20, 137.5, 10, 20, -137.5, -10, 20, 137.5, 10, 20, 137.5, -10, 20, -137.5, -10, 20, 137.5, 10, -20, -137.5, 10, -20, 137.5, -10, -20, -137.5, 10, -20, -137.5, -10, -20, 137.5, -10, -20, 137.5, 10, 20, 137.5, 10, -20, 137.5, -10, 20, 137.5, 10, -20, 137.5, -10, -20, 137.5, -10, 20, -137.5, 10, -20, -137.5, 10, 20, -137.5, -10, -20, -137.5, 10, 20, -137.5, -10, 20, -137.5, -10, -20, 137.5, 10, 20, -137.5, 10, 20, 137.5, 10, -20, -137.5, 10, 20, -137.5, 10, -20, 137.5, 10, -20, -137.5, -10, 20, 137.5, -10, 20, -137.5, -10, -20, 137.5, -10, 20, 137.5, -10, -20, -137.5, -10, -20)
+
+[sub_resource type="Sky" id="Sky_bsdch"]
+
+[sub_resource type="Environment" id="Environment_0xro5"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_bsdch")
+ssil_sharpness = 0.0
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 0.5
+glow_bloom = 0.25
+fog_enabled = true
+fog_light_energy = 0.1
+fog_sun_scatter = 0.26
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_tluky")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.2217, 0, 0)
+
+[node name="Parallax3" parent="." instance=ExtResource("2_l81ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26077, 4.23781)
+speed_multiplier = 0.1
+
+[node name="Sprite3D2" type="Sprite3D" parent="Parallax3"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 90.0589, 30.8547, -46.6238)
+cast_shadow = 0
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("3_tsesa")
+
+[node name="Parallax" parent="." instance=ExtResource("2_l81ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.6765, 0, -37.6811)
+speed_multiplier = 0.5
+
+[node name="Sprite3D2" type="Sprite3D" parent="Parallax"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 0, 24.1372, 6.98212)
+cast_shadow = 0
+texture_filter = 0
+render_priority = 2
+texture = ExtResource("4_l1pm2")
+
+[node name="Parallax4" parent="." instance=ExtResource("2_l81ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34.48, -24.4541)
+speed_multiplier = 0.7
+
+[node name="Sprite3D2" type="Sprite3D" parent="Parallax4"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 63.0323, 0, 1.84673)
+cast_shadow = 0
+texture_filter = 0
+render_priority = 3
+texture = ExtResource("5_3fw2w")
+
+[node name="Parallax2" parent="." instance=ExtResource("2_l81ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.9648, 5.76369, -1.74634)
+speed_multiplier = 1.0
+
+[node name="Sprite3D" type="Sprite3D" parent="Parallax2"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 0, 24.8302, -17.7149)
+visible = false
+texture_filter = 0
+render_priority = 4
+texture = ExtResource("6_cj273")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Parallax2/Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, -1.5299e-06, -0.02, 0, 35, -8.74228e-10, 0, -0.665966, 29.2006)
+modulate = Color(0.054902, 0.054902, 0.054902, 0.505882)
+texture_filter = 0
+render_priority = 4
+texture = SubResource("CompressedTexture2D_piwew")
+
+[node name="Node3D" parent="Parallax2" instance=ExtResource("7_oom67")]
+transform = Transform3D(7.375, 0, 0, 0, 7.375, 0, 0, 0, 7.375, -92.3383, -9.63482, -16.8292)
+
+[node name="Monster" parent="." instance=ExtResource("8_oh3gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.34081, -2.34749)
+
+[node name="Sprite3D" type="Sprite3D" parent="Monster"]
+transform = Transform3D(150, 0, 0, 0, 135, 0, 0, 0, 1, 0, 14.9355, -48.8148)
+cast_shadow = 0
+transparent = false
+texture_filter = 0
+texture = ExtResource("9_vv64o")
+
+[node name="FogVolume2" type="FogVolume" parent="Monster"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.26531, 0)
+size = Vector3(40, 24.73, 100)
+shape = 2
+material = SubResource("FogMaterial_5hx8r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.6113, -13.0733, 1.62777)
+mesh = SubResource("BoxMesh_uy61n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_slpln")
+
+[node name="Rocks" type="Node3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.6113, 13.0733, -1.62777)
+
+[node name="Rock1" parent="MeshInstance3D/Rocks" instance=ExtResource("10_ttj8h")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 38.9769, -3.24697, -11.5731)
+
+[node name="Rock2" parent="MeshInstance3D/Rocks" instance=ExtResource("11_84l0f")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 18.8773, -3.13088, -12.633)
+
+[node name="Rock10" parent="MeshInstance3D/Rocks" instance=ExtResource("11_84l0f")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 41.2215, -3.13088, 10.4844)
+
+[node name="Rock11" parent="MeshInstance3D/Rocks" instance=ExtResource("11_84l0f")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 59.3322, -3.13088, -16.9774)
+
+[node name="Rock3" parent="MeshInstance3D/Rocks" instance=ExtResource("12_ohkv8")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 49.9843, -3.47924, 12.6074)
+
+[node name="Rock4" parent="MeshInstance3D/Rocks" instance=ExtResource("13_ngsgp")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 50.2088, -2.69795, -9.90468)
+
+[node name="Rock9" parent="MeshInstance3D/Rocks" instance=ExtResource("13_ngsgp")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 78.7949, -2.69795, 9.34112)
+
+[node name="Rock5" parent="MeshInstance3D/Rocks" instance=ExtResource("14_58qq3")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 20.9972, -2.69795, 5.36957)
+
+[node name="Rock8" parent="MeshInstance3D/Rocks" instance=ExtResource("14_58qq3")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, -14.3298, -2.69795, 2.91745)
+
+[node name="Rock6" parent="MeshInstance3D/Rocks" instance=ExtResource("15_ccel3")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 58.1698, -3.84861, -2.40684)
+
+[node name="Rock7" parent="MeshInstance3D/Rocks" instance=ExtResource("16_gi6mf")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 20.9972, -2.69795, 0)
+
+[node name="Rock12" parent="MeshInstance3D/Rocks" instance=ExtResource("10_ttj8h")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 119.148, -3.24697, 17.0173)
+
+[node name="Rock13" parent="MeshInstance3D/Rocks" instance=ExtResource("11_84l0f")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 139.259, -3.13088, 17.8481)
+
+[node name="Rock14" parent="MeshInstance3D/Rocks" instance=ExtResource("11_84l0f")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 116.653, -3.13088, -5.01314)
+
+[node name="Rock15" parent="MeshInstance3D/Rocks" instance=ExtResource("11_84l0f")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 87.9426, -3.13088, 22.6532)
+
+[node name="Rock23" parent="MeshInstance3D/Rocks" instance=ExtResource("11_84l0f")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 102.875, -3.13088, 18.0177)
+
+[node name="Rock16" parent="MeshInstance3D/Rocks" instance=ExtResource("12_ohkv8")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 96.9528, -3.47924, -7.03615)
+
+[node name="Rock17" parent="MeshInstance3D/Rocks" instance=ExtResource("13_ngsgp")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 107.898, -2.69795, 15.477)
+
+[node name="Rock18" parent="MeshInstance3D/Rocks" instance=ExtResource("13_ngsgp")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 68.1812, -2.69795, -3.44176)
+
+[node name="Rock19" parent="MeshInstance3D/Rocks" instance=ExtResource("14_58qq3")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 136.934, -2.69795, -0.129168)
+
+[node name="Rock20" parent="MeshInstance3D/Rocks" instance=ExtResource("14_58qq3")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 172.286, -2.69795, 1.92018)
+
+[node name="Rock21" parent="MeshInstance3D/Rocks" instance=ExtResource("15_ccel3")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 96.2895, -3.84861, 8.07038)
+
+[node name="Rock22" parent="MeshInstance3D/Rocks" instance=ExtResource("16_gi6mf")]
+transform = Transform3D(-0.755, 0, -6.60042e-08, 0, 0.755, 0, 6.60042e-08, 0, -0.755, 126.082, -2.69795, 5.24005)
+
+[node name="Rock24" parent="MeshInstance3D/Rocks" instance=ExtResource("12_ohkv8")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 172.769, -3.47924, -15.1892)
+
+[node name="Rock25" parent="MeshInstance3D/Rocks" instance=ExtResource("13_ngsgp")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 180.916, -2.69795, 7.32399)
+
+[node name="Rock26" parent="MeshInstance3D/Rocks" instance=ExtResource("13_ngsgp")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 143.998, -2.69795, -11.5948)
+
+[node name="Rock27" parent="MeshInstance3D/Rocks" instance=ExtResource("14_58qq3")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 212.75, -2.69795, -8.28219)
+
+[node name="Rock29" parent="MeshInstance3D/Rocks" instance=ExtResource("15_ccel3")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 155.465, -3.84861, -0.0826349)
+
+[node name="Rock30" parent="MeshInstance3D/Rocks" instance=ExtResource("16_gi6mf")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 201.898, -2.69795, -2.91297)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.780529, 0.5159, 0.353019, 0.0786081, -0.641241, 0.763302, 0.620158, -0.568029, -0.541061, 23.2478, 43.5488, -24.267)
+light_color = Color(0.768627, 0.921569, 0.737255, 1)
+shadow_enabled = true
+shadow_opacity = 0.5
+shadow_blur = 5.0
+
+[node name="RigidBody3D" parent="." instance=ExtResource("17_ctxku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 8.84612, -0.13459)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0xro5")
+
+[node name="Food" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1124, 0, 0)
+
+[node name="Food2" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3722, 0, 0)
+
+[node name="Food3" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.9133, 0, 0)
+
+[node name="Food4" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.4951, 0, 0)
+
+[node name="Food5" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.0066, 0, 0)
+
+[node name="Food6" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.9574, 0, 0)

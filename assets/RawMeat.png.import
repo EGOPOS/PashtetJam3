@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chmlboo8iudre"
-path="res://.godot/imported/5a6c75a0e0a1116137ab7c98.png-0a0e1e5fc4341ae6bed40a44b674e2bd.ctex"
+uid="uid://ccnqdr55n75wo"
+path="res://.godot/imported/RawMeat.png-8c737bd81e32f757165b046d6403be01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/5a6c75a0e0a1116137ab7c98.png"
-dest_files=["res://.godot/imported/5a6c75a0e0a1116137ab7c98.png-0a0e1e5fc4341ae6bed40a44b674e2bd.ctex"]
+source_file="res://assets/RawMeat.png"
+dest_files=["res://.godot/imported/RawMeat.png-8c737bd81e32f757165b046d6403be01.ctex"]
 
 [params]
 
