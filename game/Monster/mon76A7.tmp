@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dm3ijcagctgjt"]
 
-[ext_resource type="Script" path="res://game/Monster/monster.gd" id="1_g75fd"]
+[ext_resource type="Script" path="res://game/Monster/monster.gd" id="1_oa5ub"]
 [ext_resource type="PackedScene" uid="uid://dksqy3t5j3hj6" path="res://assets/Monster/HotelAnim.glb" id="2_3n6c6"]
 [ext_resource type="Script" path="res://game/Monster/state_machine.gd" id="2_54ug0"]
 
@@ -11,7 +11,10 @@ radius = 7.20839
 density = 0.1
 
 [node name="Monster" type="Node3D"]
-script = ExtResource("1_g75fd")
+script = ExtResource("1_oa5ub")
+max_hungry_level = 100.0
+famine = 2.0
+famine_tic = 1.0
 
 [node name="Hotel" parent="." instance=ExtResource("2_3n6c6")]
 transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, 0, -1.70154, 0)
@@ -48,6 +51,7 @@ shape = SubResource("SphereShape3D_hjnfx")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.04092, 25.0032)
+current = true
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03315, 0)

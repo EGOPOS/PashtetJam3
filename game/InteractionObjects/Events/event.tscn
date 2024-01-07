@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx0mgdv5okv8s"]
+
+[ext_resource type="Script" path="res://game/InteractionObjects/Events/event.gd" id="1_oob0y"]
+
+[node name="Event" type="Node3D"]
+script = ExtResource("1_oob0y")
+
+[node name="EventTicTimer" type="Timer" parent="."]

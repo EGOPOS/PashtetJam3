@@ -6,5 +6,3 @@
 script = ExtResource("1_n5cfc")
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
