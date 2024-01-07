@@ -1,11 +1,13 @@
 extends MonsterState
 
-var velocity_speed: float = 100
+var velocity_speed: float = 25
 var direction: Vector3 = Vector3.RIGHT
 var velocity: Vector3
 
 func _enter_state(monster: Monster) -> void:
 	super(monster)
+	animation = "walk"
+	animation_player.play(animation)
 
 func _update(delta) -> void:
 	velocity = target.velocity

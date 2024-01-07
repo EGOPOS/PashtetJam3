@@ -54,7 +54,6 @@ func update_animation():
 	elif velocity.y < 0:
 		animation = "jumpDown"
 
-
 func grab_item(item: Item):
 	if current_item:
 		await throw_item()
