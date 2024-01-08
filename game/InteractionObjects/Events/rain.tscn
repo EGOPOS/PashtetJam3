@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1kqvfj640431"]
+[gd_scene load_steps=4 format=3 uid="uid://v34cfq4q568y"]
 
 [ext_resource type="PackedScene" uid="uid://dx0mgdv5okv8s" path="res://game/InteractionObjects/Events/event.tscn" id="1_ckesp"]
 [ext_resource type="Script" path="res://game/InteractionObjects/Events/rain.gd" id="2_bb1dt"]
+[ext_resource type="PackedScene" uid="uid://b26jv6k4qsc3f" path="res://game/Vfx/RainBlya.tscn" id="3_kpknq"]
 
 [node name="Rain" instance=ExtResource("1_ckesp")]
 script = ExtResource("2_bb1dt")
 event_time = 15.0
 event_tic = 0.5
 
-[node name="EventTicTimer" parent="." index="0"]
+[node name="Node3D" parent="." index="0" instance=ExtResource("3_kpknq")]
+
+[node name="EventTicTimer" parent="." index="1"]
 autostart = true

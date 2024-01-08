@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://bw5p7bbiming0" path="res://game/References/driver_gosling.tscn" id="18_dycb7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_piwew"]
-load_path = "res://.godot/imported/parallax-mountain-foreground-trees.png-2b4b73cd57a8e53c4b0a895a3577aba8.s3tc.ctex"
 
 [sub_resource type="FogMaterial" id="FogMaterial_5hx8r"]
 density = -8.0
