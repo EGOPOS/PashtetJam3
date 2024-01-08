@@ -18,6 +18,9 @@ var animation = "Pidle"
 @onready var model = $model
 
 @onready var items_area = $Area3D
+@onready var take_audio_player: AudioStreamPlayer3D = $TakeAudioPlayer
+@onready var drop_audio_player: AudioStreamPlayer3D = $DropAudioPlayer
+@onready var spawn_audio_player: AudioStreamPlayer3D = $SpawnAudioPlayer
 var current_item: Item = null
 
 func _process(delta):
@@ -59,7 +62,8 @@ func update_animation():
 func grab_item(item: Item):
 	if current_item:
 		await throw_item()
-		
+	
+	take_audio_player.play()
 	animation_player.play("UpItem")
 	await animation_player.animation_finished
 	
@@ -67,6 +71,7 @@ func grab_item(item: Item):
 	current_item.freeze = true
 
 func throw_item():
+	drop_audio_player.play()
 	animation_player.play("DropItem")
 	await animation_player.animation_finished
 	if not current_item:
@@ -96,3 +101,4 @@ func die():
 	var monster = get_tree().current_scene.get_node("Monster")
 	global_position = monster.player_spawn_marker.global_position
 	monster.player_lives -= 1
+	spawn_audio_player.play()

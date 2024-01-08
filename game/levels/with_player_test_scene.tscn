@@ -30,7 +30,8 @@ load_path = "res://.godot/imported/BGLayer3.png-52ff28c9f53fa851e4f1ee568ddb0c69
 density = -8.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcnkm"]
-albedo_color = Color(0, 0.117647, 0.0588235, 1)
+albedo_color = Color(0.12549, 0.313726, 0.258824, 1)
+texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgwm6"]
 albedo_color = Color(0.368627, 0.266667, 0.203922, 1)
@@ -62,7 +63,7 @@ fog_sun_scatter = 0.26
 script = ExtResource("1_rr4a1")
 
 [node name="WorldManager" parent="." instance=ExtResource("2_hf6un")]
-event_time_difference = 15.0
+event_time_difference = 20.0
 
 [node name="Player" parent="." instance=ExtResource("1_tluky")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 54.8582, 0, 0)
@@ -436,6 +437,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.9574, 0, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_kgnqo")
+volume_db = -10.0
 autoplay = true
 bus = &"Music"
 

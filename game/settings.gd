@@ -11,10 +11,10 @@ func _ready():
 	master_slider.value = AudioServer.get_bus_volume_db(0)
 	sfx_slider.value = AudioServer.get_bus_volume_db(1)
 	music_slider.value = AudioServer.get_bus_volume_db(2)
-	
+
 	var change_volume = func(value, bus):
 		AudioServer.set_bus_volume_db(bus, value)
-		
+
 	master_slider.value_changed.connect(Callable(change_volume).bind(0))
 	sfx_slider.value_changed.connect(Callable(change_volume).bind(1))
 	music_slider.value_changed.connect(Callable(change_volume).bind(2))

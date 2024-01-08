@@ -1,6 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://com37t1edvtlk"]
+[gd_scene load_steps=21 format=3 uid="uid://com37t1edvtlk"]
 
 [ext_resource type="Script" path="res://game/player/player.gd" id="1_o3xwk"]
+[ext_resource type="AudioStream" uid="uid://7d7n0hcaqhek" path="res://assets/Sounds/HotelVox7.mp3" id="2_nlss0"]
+[ext_resource type="AudioStream" uid="uid://c7v37x6uicqhj" path="res://assets/Sounds/HotelVox23.mp3" id="3_a8hia"]
+[ext_resource type="AudioStream" uid="uid://0t63b0xwwlt6" path="res://assets/Sounds/SpawnNewPlayer.mp3" id="4_ivkq4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gp7cp"]
 height = 1.0
@@ -1066,3 +1069,17 @@ visible = false
 light_energy = 0.5
 light_size = 0.576
 omni_range = 1.60835
+
+[node name="TakeAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_nlss0")
+bus = &"SoundEffects"
+
+[node name="DropAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_a8hia")
+bus = &"SoundEffects"
+
+[node name="SpawnAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_ivkq4")
+volume_db = 10.0
+pitch_scale = 0.8
+bus = &"SoundEffects"

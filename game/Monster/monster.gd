@@ -20,7 +20,7 @@ var player_to_hungry: float = max_hungry_level / max_player_lives
 @onready var ebalo_area = $Area3D
 @onready var camera = $Camera3D
 @onready var down_area: Area3D = $DownArea
-
+@onready var audio_player: AudioStreamPlayer3D = $AudioPlayer
 
 var velocity: Vector3
 var hungry_level: float:
@@ -31,14 +31,14 @@ var hungry_level: float:
 func _ready():
 	player_lives = max_player_lives
 	Hud.max_player_lives = max_player_lives
-	
+
 	ebalo_area.body_entered.connect( func(body): 
 		if body is Item:
 			hungry_level += famine * 3
 			hungry_level = clamp(hungry_level, 0, max_hungry_level)
 			body.queue_free()
 	)
-	
+
 	hungry_level = max_hungry_level
 	famine_timer.timeout.connect(make_famine)
 	famine_timer.start(famine_tic)
@@ -56,6 +56,8 @@ func stop_moving(body) -> void:
 func continue_moving(body) -> void:
 	if body is WallObject:
 		state_machine.change_state("Moving")
+		audio_player.play()
+		
 		#get_tree().create_tween().tween_property(camera, "rotation_degrees", Vector3(0, 0, 0), 0.5).set_ease(Tween.EASE_OUT)
 
 func _process(delta):

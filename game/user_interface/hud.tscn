@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://diatftohhyn4i"]
+[gd_scene load_steps=6 format=3 uid="uid://diatftohhyn4i"]
 
 [ext_resource type="Script" path="res://game/user_interface/hud.gd" id="1_635xu"]
 [ext_resource type="Texture2D" uid="uid://b4cmfmsgykh3t" path="res://assets/T_Enemy_SmallBot.png" id="2_8fu81"]
 [ext_resource type="Texture2D" uid="uid://ccnqdr55n75wo" path="res://assets/RawMeat.png" id="3_t85xs"]
 [ext_resource type="PackedScene" uid="uid://lbeaqgyi1yq0" path="res://game/settings.tscn" id="4_nvtjh"]
+[ext_resource type="Texture2D" uid="uid://di7udx14wrt5d" path="res://assets/vignette.png" id="5_c0uu2"]
 
 [node name="Hud" type="Control"]
 process_mode = 3
@@ -14,6 +15,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_635xu")
+
+[node name="Vignette" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_c0uu2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
