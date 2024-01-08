@@ -1,20 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1kqvfj640431"]
+[gd_scene load_steps=5 format=3 uid="uid://v34cfq4q568y"]
 
 [ext_resource type="PackedScene" uid="uid://dx0mgdv5okv8s" path="res://game/InteractionObjects/Events/event.tscn" id="1_ckesp"]
 [ext_resource type="Script" path="res://game/InteractionObjects/Events/rain.gd" id="2_bb1dt"]
+[ext_resource type="PackedScene" uid="uid://b26jv6k4qsc3f" path="res://game/Vfx/RainBlya.tscn" id="3_kpknq"]
 [ext_resource type="AudioStream" uid="uid://chsgd1wh20tye" path="res://assets/Sounds/rain.mp3" id="3_sctib"]
 
 [node name="Rain" instance=ExtResource("1_ckesp")]
 script = ExtResource("2_bb1dt")
-hp_step = 25.0
 event_time = 15.0
 event_tic = 1.0
+hp_step = 25.0
 
-[node name="EventTicTimer" parent="." index="0"]
-autostart = true
+[node name="Node3D" parent="." index="0" instance=ExtResource("3_kpknq")]
 
 [node name="Audio" type="AudioStreamPlayer" parent="." index="1"]
 stream = ExtResource("3_sctib")
 volume_db = -80.0
-autoplay = true
 bus = &"SoundEffects"
+
+[node name="EventTicTimer" parent="." index="2"]
+autostart = true

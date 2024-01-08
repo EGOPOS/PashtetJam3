@@ -21,6 +21,8 @@ var player_to_hungry: float = max_hungry_level / max_player_lives
 @onready var camera = $Camera3D
 @onready var down_area: Area3D = $DownArea
 @onready var audio_player: AudioStreamPlayer3D = $AudioPlayer
+@onready var start_camera_position = camera.position
+
 
 var velocity: Vector3
 var hungry_level: float:
@@ -51,7 +53,11 @@ func _ready():
 func stop_moving(body) -> void:
 	if body is WallObject:
 		state_machine.change_state("Idle")
-		#get_tree().create_tween().tween_property(camera, "rotation_degrees", Vector3(0, -35, 0), 0.5).set_ease(Tween.EASE_OUT)
+		if body.owner.have_camera_position:
+			await get_tree().create_tween().tween_property(camera, "position", to_local(body.owner.camera_position_node.global_position), 0.5).set_ease(Tween.EASE_OUT).finished
+			if not body.owner.was_showed:
+				add_child(body.owner.dialogue.instantiate())
+				body.owner.was_showed = true
 
 func continue_moving(body) -> void:
 	if body is WallObject:
@@ -59,6 +65,8 @@ func continue_moving(body) -> void:
 		audio_player.play()
 		
 		#get_tree().create_tween().tween_property(camera, "rotation_degrees", Vector3(0, 0, 0), 0.5).set_ease(Tween.EASE_OUT)
+		if body.owner.have_camera_position:
+			get_tree().create_tween().tween_property(camera, "position", start_camera_position, 0.5).set_ease(Tween.EASE_OUT)
 
 func _process(delta):
 	pass

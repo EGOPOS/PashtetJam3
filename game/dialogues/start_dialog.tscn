@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://udhi0ppj2x1r"]
+
+[ext_resource type="PackedScene" uid="uid://bqyuauynu4j5o" path="res://game/dialogues/dialogue.tscn" id="1_fnsch"]
+
+[node name="CanvasLayer" instance=ExtResource("1_fnsch")]
+dialogue_pages = Array[String](["Этот монстр поселивши меня як в отеле у своёмо теле, нужно жрать и идити райт дирэкшин, работай мелюзга"])

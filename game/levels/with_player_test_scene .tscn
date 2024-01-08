@@ -1,0 +1,249 @@
+[gd_scene load_steps=18 format=3 uid="uid://lv8leg1wty3l"]
+
+[ext_resource type="Script" path="res://game/levels/with_player_test_scene.gd" id="1_rr4a1"]
+[ext_resource type="PackedScene" uid="uid://com37t1edvtlk" path="res://game/player/player.tscn" id="1_tluky"]
+[ext_resource type="PackedScene" uid="uid://0dmpm0xwbsln" path="res://game/world_manager.tscn" id="2_hf6un"]
+[ext_resource type="PackedScene" uid="uid://bb4wkmjrdtnea" path="res://game/levels/parallax/parallax.tscn" id="2_l81ww"]
+[ext_resource type="Texture2D" uid="uid://cdo5behc1au0f" path="res://assets/Parallax/BGLayer2.png" id="5_62kiq"]
+[ext_resource type="Texture2D" uid="uid://cdhipn514so4i" path="res://assets/Parallax/BGLayer4.png" id="6_tlngo"]
+[ext_resource type="PackedScene" uid="uid://j3storw1j4td" path="res://assets/Enviroment/trees.tscn" id="7_oom67"]
+[ext_resource type="PackedScene" uid="uid://dm3ijcagctgjt" path="res://game/Monster/monster.tscn" id="8_oh3gb"]
+[ext_resource type="Texture2D" uid="uid://cjpotn6l4sg78" path="res://assets/parallax-mountain-bg.png" id="9_vv64o"]
+[ext_resource type="Texture2D" uid="uid://e80tlbwiucak" path="res://assets/Parallax/BGLayer1.png" id="10_mbhwa"]
+[ext_resource type="PackedScene" uid="uid://cb7itxiictoot" path="res://game/levels/patterns/hole_pattern.tscn" id="13_8pn7h"]
+[ext_resource type="PackedScene" uid="uid://ctnsepxkqrryb" path="res://game/items/food.tscn" id="18_mf2ef"]
+[ext_resource type="AudioStream" uid="uid://coiow3m4ypxsw" path="res://assets/c84c9ece9cc38eab.mp3" id="21_kgnqo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8k3yu"]
+load_path = "res://.godot/imported/BGLayer3.png-52ff28c9f53fa851e4f1ee568ddb0c69.s3tc.ctex"
+
+[sub_resource type="FogMaterial" id="FogMaterial_5hx8r"]
+density = -8.0
+
+[sub_resource type="Sky" id="Sky_d3g11"]
+
+[sub_resource type="Environment" id="Environment_0xro5"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_d3g11")
+ssil_sharpness = 0.0
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 0.5
+glow_bloom = 0.25
+fog_enabled = true
+fog_light_energy = 0.1
+fog_sun_scatter = 0.26
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_rr4a1")
+
+[node name="WorldManager" parent="." instance=ExtResource("2_hf6un")]
+event_time_difference = 15.0
+
+[node name="Player" parent="." instance=ExtResource("1_tluky")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 54.8582, 0, 0)
+
+[node name="Parallax3" parent="." instance=ExtResource("2_l81ww")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 0, -0.26077, -2.92608)
+speed_multiplier = 0.1
+
+[node name="Sprite3D5" type="Sprite3D" parent="Parallax3"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, -112.256, 30.8547, -46.6238)
+cast_shadow = 0
+flip_h = true
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("5_62kiq")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Parallax3"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 13.1245, 30.8547, -46.6238)
+cast_shadow = 0
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("5_62kiq")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Parallax3"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 148.428, 30.8547, -46.6238)
+cast_shadow = 0
+flip_h = true
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("5_62kiq")
+
+[node name="Parallax" parent="." instance=ExtResource("2_l81ww")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 48.6765, -8.64843, -23.2954)
+speed_multiplier = 0.5
+
+[node name="Sprite3D5" type="Sprite3D" parent="Parallax"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, -153.885, 32.1546, 1.84673)
+cast_shadow = 0
+texture_filter = 0
+render_priority = 3
+texture = SubResource("CompressedTexture2D_8k3yu")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Parallax"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, -32.0934, 32.1546, 1.84673)
+cast_shadow = 0
+texture_filter = 0
+render_priority = 3
+texture = SubResource("CompressedTexture2D_8k3yu")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Parallax"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 103.241, 32.1546, 1.84673)
+cast_shadow = 0
+texture_filter = 0
+render_priority = 3
+texture = SubResource("CompressedTexture2D_8k3yu")
+
+[node name="Parallax4" parent="." instance=ExtResource("2_l81ww")]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, -36.0805, 2.85203, 21.3036)
+speed_multiplier = 0.7
+
+[node name="Sprite3D3" type="Sprite3D" parent="Parallax4"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 23.6814, 0, -7.88902)
+cast_shadow = 0
+texture_filter = 0
+render_priority = 127
+texture = ExtResource("6_tlngo")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Parallax4"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 145.484, 0, -7.88901)
+cast_shadow = 0
+flip_h = true
+texture_filter = 0
+render_priority = 127
+texture = ExtResource("6_tlngo")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Parallax4"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 270.397, 0, -7.88901)
+cast_shadow = 0
+texture_filter = 0
+render_priority = 127
+texture = ExtResource("6_tlngo")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Parallax4"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 392.2, 0, -7.88901)
+cast_shadow = 0
+flip_h = true
+texture_filter = 0
+render_priority = 127
+texture = ExtResource("6_tlngo")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Parallax4"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 516.73, 0, -7.88901)
+cast_shadow = 0
+texture_filter = 0
+render_priority = 127
+texture = ExtResource("6_tlngo")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Parallax4"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 638.532, 0, -7.88901)
+cast_shadow = 0
+flip_h = true
+texture_filter = 0
+render_priority = 127
+texture = ExtResource("6_tlngo")
+
+[node name="Sprite3D9" type="Sprite3D" parent="Parallax4"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 761.863, 0, -7.88901)
+cast_shadow = 0
+texture_filter = 0
+render_priority = 127
+texture = ExtResource("6_tlngo")
+
+[node name="Sprite3D10" type="Sprite3D" parent="Parallax4"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 1, 883.665, 0, -7.88901)
+cast_shadow = 0
+flip_h = true
+texture_filter = 0
+render_priority = 127
+texture = ExtResource("6_tlngo")
+
+[node name="Parallax2" parent="." instance=ExtResource("2_l81ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.9648, 5.76369, -1.74634)
+speed_multiplier = 1.0
+
+[node name="Node3D" parent="Parallax2" instance=ExtResource("7_oom67")]
+transform = Transform3D(7.375, 0, 0, 0, 7.375, 0, 0, 0, 7.375, -92.3383, -9.63482, -16.8292)
+
+[node name="Monster" parent="." instance=ExtResource("8_oh3gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.6365, -1.341, 0)
+max_hungry_level = 100.0
+famine = 5.0
+famine_tic = 2.0
+
+[node name="Hotel" parent="Monster" index="1"]
+transform = Transform3D(-3.93403e-07, 0, 9, 0, 9, 0, -9, 0, -3.93403e-07, 0, -1.70154, 0)
+
+[node name="Skeleton3D" parent="Monster/Hotel/Armature" index="0"]
+bones/3/scale = Vector3(1, 1, 1.00001)
+bones/4/scale = Vector3(1, 1, 1.00001)
+
+[node name="Camera3D" parent="Monster" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22039, 5, 25)
+current = true
+
+[node name="Sprite3D" type="Sprite3D" parent="Monster"]
+transform = Transform3D(150, 0, 0, 0, 135, 0, 0, 0, 1, 0, 14.9355, -48.8148)
+visible = false
+cast_shadow = 0
+transparent = false
+texture_filter = 0
+texture = ExtResource("9_vv64o")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Monster"]
+transform = Transform3D(150, 0, 0, 0, 135, 0, 0, 0, 1, 0, 14.9355, -48.8148)
+cast_shadow = 0
+transparent = false
+texture_filter = 0
+texture = ExtResource("10_mbhwa")
+
+[node name="FogVolume2" type="FogVolume" parent="Monster"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.26531, 0)
+size = Vector3(40, 24.73, 100)
+shape = 2
+material = SubResource("FogMaterial_5hx8r")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.780529, 0.5159, 0.353019, 0.0786081, -0.641241, 0.763302, 0.620158, -0.568029, -0.541061, 23.2478, 43.5488, -24.267)
+light_color = Color(0.768627, 0.921569, 0.737255, 1)
+shadow_enabled = true
+shadow_opacity = 0.5
+shadow_blur = 5.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0xro5")
+
+[node name="Food" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1124, 0, 0)
+
+[node name="Food2" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3722, 0, 0)
+
+[node name="Food3" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.9133, 0, 0)
+
+[node name="Food4" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.4951, 0, 0)
+
+[node name="Food5" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.0066, 0, 0)
+
+[node name="Food6" parent="." instance=ExtResource("18_mf2ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.9574, 0, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("21_kgnqo")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+
+[node name="HolePattern" parent="." instance=ExtResource("13_8pn7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.8936, -11.9555, 2.67044)
+
+[editable path="Monster"]
+[editable path="Monster/Hotel"]
